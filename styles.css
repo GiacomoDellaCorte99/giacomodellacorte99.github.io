@@ -277,6 +277,54 @@ body {
     font-weight: 500;
 }
 
+/* Soft Skills */
+.soft-skills {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.soft-skills h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.soft-skill {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.soft-skill:hover {
+    transform: translateY(-5px);
+}
+
+.soft-skill i {
+    font-size: 2rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.soft-skill h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.soft-skill p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
 /* Sezione Experience */
 .experience {
     padding: 100px 0;
@@ -525,6 +573,122 @@ body {
 
 .dot.active {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Sezione Certificazioni */
+.certifications {
+    padding: 100px 0;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.certification-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cert-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.cert-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.cert-issuer {
+    color: #667eea;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.cert-date, .cert-id {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Sezione Interessi */
+.interests {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.interest-item {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.interest-item:hover {
+    transform: translateY(-10px);
+}
+
+.interest-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.interest-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.interest-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.interest-item p {
+    color: #666;
+    font-size: 0.9rem;
 }
 
 .projects-grid {
