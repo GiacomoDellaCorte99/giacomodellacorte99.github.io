@@ -431,10 +431,100 @@ body {
 .skill-progress[data-width="80%"] { width: 80%; }
 .skill-progress[data-width="75%"] { width: 75%; }
 .skill-progress[data-width="70%"] { width: 70%; }
+.skill-progress[data-width="65%"] { width: 65%; }
 
 /* Sezione Projects */
 .projects {
     padding: 100px 0;
+}
+
+/* Sezione Lingue */
+.languages {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.language-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.language-card:hover {
+    transform: translateY(-5px);
+}
+
+.language-flag {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.language-flag i {
+    font-size: 2rem;
+    color: white;
+}
+
+.language-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.language-level {
+    color: #667eea;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.language-skills {
+    text-align: left;
+}
+
+.language-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.language-skill span {
+    font-weight: 500;
+    color: #333;
+    min-width: 80px;
+}
+
+.skill-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .projects-grid {
