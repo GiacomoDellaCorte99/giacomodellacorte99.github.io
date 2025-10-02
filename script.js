@@ -229,33 +229,6 @@ function throttle(func, wait) {
 // Update active nav link on scroll
 window.addEventListener('scroll', throttle(updateActiveNavLink, 100));
 
-// Typing animation for hero text
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Initialize typing animation when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    const heroName = document.querySelector('.hero-name');
-    if (heroName) {
-        const originalText = heroName.textContent;
-        setTimeout(() => {
-            typeWriter(heroName, originalText, 150);
-        }, 1000);
-    }
-});
-
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;

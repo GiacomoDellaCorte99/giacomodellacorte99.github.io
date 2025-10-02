@@ -567,19 +567,25 @@ body {
     font-weight: 500;
     color: #333;
     min-width: 80px;
+    flex-shrink: 0;
 }
 
 .skill-dots {
     display: flex;
     gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .dot {
     width: 12px;
     height: 12px;
+    min-width: 12px;
+    min-height: 12px;
     border-radius: 50%;
     background: #e0e0e0;
     transition: background 0.3s ease;
+    flex-shrink: 0;
+    display: block;
 }
 
 .dot.active {
@@ -764,22 +770,6 @@ body {
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.project-link {
-    text-decoration: none;
-    color: #667eea;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.project-link:hover {
-    color: #764ba2;
 }
 
 /* Sezione Contact */
