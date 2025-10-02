@@ -65,7 +65,7 @@ body {
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 1001;
+    z-index: 9999;
     transition: all 0.3s ease;
 }
 
@@ -140,7 +140,7 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     padding-top: 80px;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .hero-container {
@@ -152,7 +152,7 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .hero-title {
@@ -161,8 +161,6 @@ body {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: #333;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-name {
@@ -178,16 +176,12 @@ body {
     color: #666;
     margin-bottom: 2.5rem;
     line-height: 1.6;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-avatar {
@@ -201,8 +195,6 @@ body {
     margin: 0 auto;
     box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
     overflow: hidden;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-avatar i {
@@ -906,7 +898,7 @@ section {
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
-        z-index: 999;
+        z-index: 9998;
     }
 
     .nav-menu.active {
