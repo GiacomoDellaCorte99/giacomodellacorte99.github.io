@@ -65,7 +65,7 @@ body {
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 1000;
+    z-index: 1001;
     transition: all 0.3s ease;
 }
 
@@ -209,6 +209,11 @@ body {
 }
 
 /* Sezioni generali */
+section {
+    position: relative;
+    z-index: 1;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
@@ -889,6 +894,7 @@ body {
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
+        z-index: 999;
     }
 
     .nav-menu.active {
