@@ -414,6 +414,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add loaded class to body for CSS animations
     document.body.classList.add('loaded');
     
+    // Update copyright year automatically
+    const currentYear = new Date().getFullYear();
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = currentYear;
+    }
+    
     // Initialize other features here if needed
     console.log('🚀 Portfolio di Giacomo Della Corte caricato con successo!');
 });
