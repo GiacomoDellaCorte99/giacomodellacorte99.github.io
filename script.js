@@ -4,7 +4,6 @@ const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const header = document.querySelector('.header');
 const skillProgress = document.querySelectorAll('.skill-progress');
-const contactForm = document.getElementById('contactForm');
 
 // Mobile Menu Toggle
 navToggle.addEventListener('click', () => {
@@ -68,7 +67,7 @@ const animateOnScroll = new IntersectionObserver((entries) => {
 
 // Elements to animate
 const animateElements = document.querySelectorAll(
-    '.about-content, .timeline-item, .skill-category, .project-card, .contact-item, .contact-form'
+    '.about-content, .timeline-item, .skill-category, .project-card, .contact-item'
 );
 
 animateElements.forEach(el => {
@@ -95,102 +94,6 @@ const animateSkills = new IntersectionObserver((entries) => {
 
 if (skillsSection) {
     animateSkills.observe(skillsSection);
-}
-
-// Contact form handling
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
-        // Basic validation
-        if (!name || !email || !message) {
-            showNotification('Tutti i campi sono obbligatori!', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Inserisci un indirizzo email valido!', 'error');
-            return;
-        }
-        
-        // Simulate form submission
-        showNotification('Messaggio inviato con successo! Ti risponderò al più presto.', 'success');
-        contactForm.reset();
-    });
-}
-
-// Email validation
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Notification system
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
-    }
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <span class="notification-message">${message}</span>
-            <button class="notification-close">&times;</button>
-        </div>
-    `;
-    
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        z-index: 10000;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        max-width: 400px;
-    `;
-    
-    // Add to page
-    document.body.appendChild(notification);
-    
-    // Animate in
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Close button functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    });
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        }
-    }, 5000);
 }
 
 // Active navigation link highlighting

@@ -164,6 +164,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    display: inline;
 }
 
 .hero-description {
@@ -574,6 +575,8 @@ body {
     display: flex;
     gap: 0.5rem;
     flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .dot {
@@ -581,11 +584,16 @@ body {
     height: 12px;
     min-width: 12px;
     min-height: 12px;
+    max-width: 12px;
+    max-height: 12px;
     border-radius: 50%;
     background: #e0e0e0;
     transition: background 0.3s ease;
+    flex: none;
     flex-shrink: 0;
-    display: block;
+    flex-grow: 0;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .dot.active {
@@ -778,10 +786,10 @@ body {
     background: #f8f9fa;
 }
 
-.contact-content {
+.contact-info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -789,11 +797,15 @@ body {
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
     background: white;
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
 }
 
 .contact-icon {
@@ -819,38 +831,6 @@ body {
 
 .contact-details p {
     color: #666;
-}
-
-.contact-form {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid #f1f3f4;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-    font-family: 'Inter', sans-serif;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #667eea;
-}
-
-.form-group textarea {
-    resize: vertical;
 }
 
 /* Footer */
@@ -970,9 +950,9 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .contact-content {
+    .contact-info-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .footer-content {
